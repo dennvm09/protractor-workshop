@@ -1,4 +1,4 @@
-import { Config } from 'protractor';
+import { Config, browser } from 'protractor';
 import { reporter } from './helpers/reporter';
 
 export const config: Config = {
@@ -6,7 +6,8 @@ export const config: Config = {
   specs: ['../test/**/*.spec.js'],
   getPageTimeout: 20000,
   SELENIUM_PROMISE_MANAGER: false,
-  onPrepare: () => {
+  onPrepare: async () => {
+    await browser.waitForAngularEnabled(false);
     reporter();
   },
   capabilities: {

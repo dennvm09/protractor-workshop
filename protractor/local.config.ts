@@ -1,4 +1,4 @@
-import { Config } from 'protractor';
+import { Config, browser} from 'protractor';
 import { reporter } from './helpers/reporter';
 
 export const config: Config = {
@@ -8,7 +8,8 @@ export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
-  onPrepare: () => {
+  onPrepare: async () => {
+    await browser.waitForAngularEnabled(false);
     reporter();
   }
 };
