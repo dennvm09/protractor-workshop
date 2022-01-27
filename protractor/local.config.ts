@@ -4,7 +4,7 @@ import { reporter } from './helpers/reporter';
 export const config: Config = {
   baseUrl: 'http://www.google.com',
   baseBuyUrl: 'https://www.saucedemo.com/',
-  getPageTimeout: 10000,
+  getPageTimeout: 20000,
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
