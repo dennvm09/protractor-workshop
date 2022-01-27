@@ -7,8 +7,8 @@ export const config: Config = {
   getPageTimeout: 20000,
   SELENIUM_PROMISE_MANAGER: false,
   onPrepare: async () => {
-    await browser.waitForAngularEnabled(false);
     reporter();
+    await browser.waitForAngularEnabled(false);
   },
   capabilities: {
     browserName: 'chrome',
