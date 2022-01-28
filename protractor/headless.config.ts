@@ -1,19 +1,19 @@
-import { Config, browser } from 'protractor';
-import { reporter } from './helpers/reporter';
+import { Config, browser } from "protractor";
+import { reporter } from "./helpers/reporter";
 
 export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   getPageTimeout: 20000,
   SELENIUM_PROMISE_MANAGER: false,
-  onPrepare: async () => {
+  onPrepare: () => {
     reporter();
-    await browser.waitForAngularEnabled(false);
+    browser.waitForAngularEnabled(false);
   },
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      args: ['--headless', '--disable-gpu']
-    }
-  }
+      args: ['--headless', '--disable-gpu'],
+    },
+  },
 };

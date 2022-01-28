@@ -1,16 +1,15 @@
 import { browser } from 'protractor';
-import { config } from '../protractor/local.config';
+
+const baseUrl = "http://www.google.com";
 
 describe('Given a SDET learning protractor', () => {
   describe('when open Google Page', () => {
     beforeEach(async () => {
       browser.waitForAngularEnabled(false);
-    });
-    beforeEach(() => {
-      browser.get(config.baseUrl);
+      await browser.get(baseUrl);
     });
     it('then should have a title', async () => {
-      expect(browser.driver.getTitle()).toEqual('Google');
+      expect(await browser.driver.getTitle()).toEqual("Google");
     });
   });
 });
