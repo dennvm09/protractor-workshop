@@ -1,5 +1,5 @@
-import { Config, browser } from "protractor";
-import { reporter } from "./helpers/reporter";
+import { Config, browser } from 'protractor';
+import { reporter } from './helpers/reporter';
 
 export const config: Config = {
   framework: 'jasmine',
@@ -17,3 +17,5 @@ export const config: Config = {
     },
   },
 };
+
+// export default config;

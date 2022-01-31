@@ -1,10 +1,10 @@
 /* eslint-disable protractor/no-describe-selectors */
+
 import { browser, by } from 'protractor';
 
 const baseUrl = 'https://www.saucedemo.com/';
 
 describe('Buy a t-shirt', () => {
-
   beforeEach(async () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
 
@@ -15,12 +15,11 @@ describe('Buy a t-shirt', () => {
     const lastName = 'Mosquera';
     const zipCode = '720016';
 
-    await browser.wait(browser.get(baseUrl), 10000, "Not possible to access 1.");
+    await browser.wait(browser.get(baseUrl), 10000, 'Not possible to access 1.');
 
     const userEle = browser.findElement(by.id('user-name'));
     const passEle = browser.findElement(by.id('password'));
     const loginBtnEle = browser.findElement(by.id('login-button'));
-
 
     await userEle.sendKeys(userName);
     await passEle.sendKeys(passwd);
