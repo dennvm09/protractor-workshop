@@ -15,7 +15,7 @@ describe('Buy a t-shirt', () => {
     const lastName = 'Mosquera';
     const zipCode = '720016';
 
-    await browser.wait(browser.get(baseUrl), 10000, 'Not possible to access 1.');
+    await browser.get(baseUrl);
 
     const userEle = browser.findElement(by.id('user-name'));
     const passEle = browser.findElement(by.id('password'));
