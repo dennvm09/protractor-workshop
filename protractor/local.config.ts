@@ -1,12 +1,13 @@
-import { Config } from 'protractor';
+import { Config, browser } from 'protractor';
 import { reporter } from './helpers/reporter';
 
 export const config: Config = {
-  baseUrl: 'http://www.google.com',
+  getPageTimeout: 20000,
   framework: 'jasmine',
-  specs: [ '../test/google.spec.js' ],
+  specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
   onPrepare: () => {
     reporter();
+    browser.waitForAngularEnabled(false);
   }
 };
