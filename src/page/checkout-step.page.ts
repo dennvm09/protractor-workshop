@@ -16,11 +16,7 @@ export class CheckoutPage {
     this.continueBtnEle = browser.findElement(by.id('continue'));
   }
 
-  public async goToSummary(): Promise<void> {
-    const firstName = 'Dennys';
-    const lastName = 'Mosquera';
-    const zipCode = '720016';
-
+  public async goToSummary(firstName: string, lastName: string, zipCode: string): Promise<void> {
     await this.firstNameEle.sendKeys(firstName);
     await this.lastNameEle.sendKeys(lastName);
     await this.zipCodeEle.sendKeys(zipCode);

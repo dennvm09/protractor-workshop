@@ -13,10 +13,7 @@ export class SignInPage {
     this.loginBtnEle = browser.findElement(by.id('login-button'));
   }
 
-  public async goToInventoryMenu(): Promise<void> {
-    const userName = 'standard_user';
-    const passwd = 'secret_sauce';
-
+  public async doLogIn(userName: string, passwd: string): Promise<void> {
     await this.userEle.sendKeys(userName);
     await this.passwordEle.sendKeys(passwd);
     await this.loginBtnEle.click();

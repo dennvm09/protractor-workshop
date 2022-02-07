@@ -31,22 +31,21 @@
   },
   "homepage": "https://github.com/dennvm09/protractor-workshop#readme",
   "dependencies": {
-    "chromedriver": "^97.0.4",
-    "eslint-plugin-protractor": "^2.1.1",
-    "jasmine-spec-reporter": "^7.0.0",
-    "protractor": "^7.0.0"
+
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
+    "chromedriver": "^97.0.4",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-protractor": "^2.1.1",
     "protractor": "^7.0.0",
-    "typescript": "^4.5.5"
+    "jasmine-spec-reporter": "^7.0.0"
   }
 }

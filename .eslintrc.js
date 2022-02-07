@@ -26,6 +26,7 @@ module.exports = {
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.ts', '**/*.**.ts'] }],
     'import/extensions': [
       'error',
       'ignorePackages',
