@@ -13,7 +13,7 @@ export class SignInPage {
     this.loginBtnEle = browser.findElement(by.id('login-button'));
   }
 
-  public async doLogIn(userName: string, passwd: string): Promise<void> {
+  public async logIn(userName: string, passwd: string): Promise<void> {
     await this.userEle.sendKeys(userName);
     await this.passwordEle.sendKeys(passwd);
     await this.loginBtnEle.click();

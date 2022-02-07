@@ -9,17 +9,11 @@ const baseUrl = 'https://www.saucedemo.com/';
 describe('Buy a t-shirt', () => {
   beforeEach(async () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-    const userName = 'standard_user';
-    const passwd = 'secret_sauce';
-
-    const firstName = 'Dennys';
-    const lastName = 'Mosquera';
-    const zipCode = '720016';
 
     await browser.get(baseUrl);
 
     const signInPage: SignInPage = new SignInPage();
-    await signInPage.doLogIn(userName, passwd);
+    await signInPage.logIn('standard_user', 'secret_sauce');
 
     const inventoryPage: InventoryPage = new InventoryPage();
     await inventoryPage.goToShoppingCart();
@@ -28,7 +22,7 @@ describe('Buy a t-shirt', () => {
     await shoppingCartPage.goToCheckout();
 
     const checkoutPage: CheckoutPage = new CheckoutPage();
-    await checkoutPage.goToSummary(firstName, lastName, zipCode);
+    await checkoutPage.goToSummary('Dennys', 'Mosquera', '720016');
 
     const summaryPage: SummaryPage = new SummaryPage();
     await summaryPage.goToCheckoutComplete();
