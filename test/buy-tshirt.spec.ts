@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { browser } from 'protractor';
 import {
   SignInPage, InventoryPage, ShoppingCartPage, SummaryPage, CheckoutPage, CheckoutCompletePage
