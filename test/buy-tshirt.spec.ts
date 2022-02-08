@@ -13,7 +13,6 @@ describe('Buy a t-shirt', () => {
   const summaryPage: SummaryPage = new SummaryPage();
 
   beforeEach(async () => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
     await browser.get(baseUrl);
 
     await signInPage.logIn('standard_user', 'secret_sauce');
