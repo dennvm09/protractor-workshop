@@ -2,7 +2,10 @@ import { Config, browser } from 'protractor';
 import { reporter } from './helpers/reporter';
 
 export const config: Config = {
-  getPageTimeout: 20000,
+  getPageTimeout: 30000,
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 120000
+  },
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
