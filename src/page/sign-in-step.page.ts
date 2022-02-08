@@ -1,16 +1,16 @@
-import { browser, by, WebElement } from 'protractor';
+import { browser, by, ElementFinder } from 'protractor';
 
 export class SignInPage {
-  private userEle : WebElement;
+  private userEle : ElementFinder;
 
-  private passwordEle: WebElement;
+  private passwordEle: ElementFinder;
 
-  private loginBtnEle: WebElement;
+  private loginBtnEle: ElementFinder;
 
   constructor() {
-    this.userEle = browser.findElement(by.id('user-name'));
-    this.passwordEle = browser.findElement(by.id('password'));
-    this.loginBtnEle = browser.findElement(by.id('login-button'));
+    this.userEle = browser.element(by.id('user-name'));
+    this.passwordEle = browser.element(by.id('password'));
+    this.loginBtnEle = browser.element(by.id('login-button'));
   }
 
   public async logIn(userName: string, passwd: string): Promise<void> {

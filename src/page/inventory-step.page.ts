@@ -1,13 +1,13 @@
-import { browser, by, WebElement } from 'protractor';
+import { browser, by, ElementFinder } from 'protractor';
 
 export class InventoryPage {
-  private buyBtnEle : WebElement;
+  private buyBtnEle : ElementFinder;
 
-  private cartBtnEle: WebElement;
+  private cartBtnEle: ElementFinder;
 
   constructor() {
-    this.buyBtnEle = browser.findElement(by.id('add-to-cart-sauce-labs-bolt-t-shirt'));
-    this.cartBtnEle = browser.findElement(by.id('shopping_cart_container'));
+    this.buyBtnEle = browser.element(by.id('add-to-cart-sauce-labs-bolt-t-shirt'));
+    this.cartBtnEle = browser.element(by.id('shopping_cart_container'));
   }
 
   public async goToShoppingCart(): Promise<void> {

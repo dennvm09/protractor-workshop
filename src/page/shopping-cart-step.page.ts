@@ -1,10 +1,10 @@
-import { browser, by, WebElement } from 'protractor';
+import { browser, by, ElementFinder } from 'protractor';
 
 export class ShoppingCartPage {
-  private checkoutBtnEle: WebElement;
+  private checkoutBtnEle: ElementFinder;
 
   constructor() {
-    this.checkoutBtnEle = browser.findElement(by.id('checkout'));
+    this.checkoutBtnEle = browser.element(by.id('checkout'));
   }
 
   public async goToCheckout(): Promise<void> {

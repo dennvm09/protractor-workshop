@@ -6,24 +6,20 @@ import {
 const baseUrl = 'https://www.saucedemo.com/';
 
 describe('Buy a t-shirt', () => {
+  const signInPage: SignInPage = new SignInPage();
+  const inventoryPage: InventoryPage = new InventoryPage();
+  const shoppingCartPage: ShoppingCartPage = new ShoppingCartPage();
+  const checkoutPage: CheckoutPage = new CheckoutPage();
+  const summaryPage: SummaryPage = new SummaryPage();
+
   beforeEach(async () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-
     await browser.get(baseUrl);
 
-    const signInPage: SignInPage = new SignInPage();
     await signInPage.logIn('standard_user', 'secret_sauce');
-
-    const inventoryPage: InventoryPage = new InventoryPage();
     await inventoryPage.goToShoppingCart();
-
-    const shoppingCartPage: ShoppingCartPage = new ShoppingCartPage();
     await shoppingCartPage.goToCheckout();
-
-    const checkoutPage: CheckoutPage = new CheckoutPage();
     await checkoutPage.goToSummary('Dennys', 'Mosquera', '720016');
-
-    const summaryPage: SummaryPage = new SummaryPage();
     await summaryPage.goToCheckoutComplete();
   });
   it('then should be bought a t-shirt', async () => {

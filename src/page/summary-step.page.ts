@@ -1,10 +1,10 @@
-import { browser, by, WebElement } from 'protractor';
+import { browser, by, ElementFinder } from 'protractor';
 
 export class SummaryPage {
-  private finishBtnEle: WebElement;
+  private finishBtnEle: ElementFinder;
 
   constructor() {
-    this.finishBtnEle = browser.findElement(by.id('finish'));
+    this.finishBtnEle = browser.element(by.id('finish'));
   }
 
   public async goToCheckoutComplete(): Promise<void> {

@@ -1,10 +1,10 @@
-import { browser, by, WebElement } from 'protractor';
+import { browser, by, ElementFinder } from 'protractor';
 
 export class CheckoutCompletePage {
-  private finalMessgaEle: WebElement;
+  private finalMessgaEle: ElementFinder;
 
   constructor() {
-    this.finalMessgaEle = browser.findElement(by.className('complete-text'));
+    this.finalMessgaEle = browser.element(by.className('complete-text'));
   }
 
   public async getFinalMessage(): Promise<string> {

@@ -30,9 +30,7 @@
     "url": "https://github.com/dennvm09/protractor-workshop/issues"
   },
   "homepage": "https://github.com/dennvm09/protractor-workshop#readme",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^17.0.10",
