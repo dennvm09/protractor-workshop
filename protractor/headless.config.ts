@@ -12,6 +12,7 @@ export const config: Config = {
   onPrepare: () => {
     reporter();
     browser.waitForAngularEnabled(false);
+    browser.manage().timeouts().implicitlyWait(3000);
   },
   capabilities: {
     browserName: 'chrome',
