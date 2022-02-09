@@ -1,4 +1,6 @@
-import { browser, by, ElementFinder } from 'protractor';
+import {
+  browser, by, ElementFinder, ExpectedConditions
+} from 'protractor';
 
 export class SignInPage {
   private userEle : ElementFinder;
@@ -14,8 +16,11 @@ export class SignInPage {
   }
 
   public async logIn(userName: string, passwd: string): Promise<void> {
+    await browser.wait(ExpectedConditions.presenceOf(this.userEle), 10000, 'It is not possible to access.');
     await this.userEle.sendKeys(userName);
+    await browser.wait(ExpectedConditions.presenceOf(this.passwordEle), 10000, 'It is not possible to access.');
     await this.passwordEle.sendKeys(passwd);
+    await browser.wait(ExpectedConditions.elementToBeClickable(this.loginBtnEle), 10000, 'It is not possible to access.');
     await this.loginBtnEle.click();
   }
 }

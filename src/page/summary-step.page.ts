@@ -1,4 +1,6 @@
-import { browser, by, ElementFinder } from 'protractor';
+import {
+  browser, by, ElementFinder, ExpectedConditions
+} from 'protractor';
 
 export class SummaryPage {
   private finishBtnEle: ElementFinder;
@@ -8,6 +10,7 @@ export class SummaryPage {
   }
 
   public async goToCheckoutComplete(): Promise<void> {
+    await browser.wait(ExpectedConditions.elementToBeClickable(this.finishBtnEle), 10000, 'It is not possible to access.');
     await this.finishBtnEle.click();
   }
 }
