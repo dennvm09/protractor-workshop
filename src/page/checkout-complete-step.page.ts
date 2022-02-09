@@ -1,4 +1,6 @@
-import { browser, by, ElementFinder } from 'protractor';
+import {
+  browser, by, ElementFinder, ExpectedConditions
+} from 'protractor';
 
 export class CheckoutCompletePage {
   private finalMessgaEle: ElementFinder;
@@ -8,6 +10,7 @@ export class CheckoutCompletePage {
   }
 
   public async getFinalMessage(): Promise<string> {
+    await browser.wait(ExpectedConditions.presenceOf(this.finalMessgaEle), 10000, 'It is not possible to access.');
     return this.finalMessgaEle.getText();
   }
 }
