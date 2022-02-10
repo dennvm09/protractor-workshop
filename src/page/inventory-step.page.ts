@@ -9,7 +9,7 @@ export class InventoryPage {
 
   constructor() {
     this.buyBtnEle = browser.element(by.id('add-to-cart-sauce-labs-bolt-t-shirt'));
-    this.cartBtnEle = browser.element(by.className('shopping_cart_link'));
+    this.cartBtnEle = browser.element(by.id('shopping_cart_container'));
   }
 
   public async goToShoppingCart(): Promise<void> {

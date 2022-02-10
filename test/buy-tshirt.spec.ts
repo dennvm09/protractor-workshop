@@ -23,6 +23,6 @@ describe('Buy a t-shirt', () => {
   });
   it('then should be bought a t-shirt', async () => {
     const checkoutCompletePage: CheckoutCompletePage = new CheckoutCompletePage();
-    expect(await checkoutCompletePage.getFinalMessage()).toBe('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+    expect(await checkoutCompletePage.getFinalMessage()).toContain('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
   });
 });
