@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf reports",
     "build": "npm run lint && npm run clean && tsc",
     "test:local": "npm run build && protractor dist/protractor/local.config.js",
     "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
@@ -30,7 +30,6 @@
     "url": "https://github.com/dennvm09/protractor-workshop/issues"
   },
   "homepage": "https://github.com/dennvm09/protractor-workshop#readme",
-  "dependencies": {},
   "devDependencies": {
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^17.0.10",
@@ -43,7 +42,8 @@
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-protractor": "^2.1.1",
-    "protractor": "^7.0.0",
-    "jasmine-spec-reporter": "^7.0.0"
+    "jasmine-awesome-report": "^0.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "protractor": "^7.0.0"
   }
 }
