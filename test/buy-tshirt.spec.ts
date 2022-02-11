@@ -20,7 +20,7 @@ describe('Buy a t-shirt', () => {
         const inventoryPage: InventoryPage = new InventoryPage();
         await inventoryPage.goToShoppingCart();
       });
-      describe('View shopping cart and checkout.', () => {
+      describe('Go to checkout.', () => {
         beforeAll(async () => {
           const shoppingCartPage: ShoppingCartPage = new ShoppingCartPage();
           await shoppingCartPage.goToCheckout();
@@ -30,7 +30,7 @@ describe('Buy a t-shirt', () => {
             const checkoutPage: CheckoutPage = new CheckoutPage();
             await checkoutPage.goToSummary('Dennys', 'Mosquera', '720016');
           });
-          describe('View purchase summary', () => {
+          describe('Go to checkout complete.', () => {
             beforeAll(async () => {
               const summaryPage: SummaryPage = new SummaryPage();
               await summaryPage.goToCheckoutComplete();
