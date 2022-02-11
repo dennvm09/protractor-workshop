@@ -10,7 +10,7 @@ export class SummaryPage {
   }
 
   public async goToCheckoutComplete(): Promise<void> {
-    await browser.wait(ExpectedConditions.elementToBeClickable(this.finishBtnEle), 10000, 'It is not possible to access.');
+    await browser.wait(ExpectedConditions.elementToBeClickable(this.finishBtnEle), 10000, 'It is not possible to access 999.');
     await this.finishBtnEle.click();
   }
 }

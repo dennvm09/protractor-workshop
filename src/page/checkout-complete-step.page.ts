@@ -10,7 +10,7 @@ export class CheckoutCompletePage {
   }
 
   public async getFinalMessage(): Promise<string> {
-    await browser.wait(ExpectedConditions.presenceOf(this.finalMessgaEle), 10000, 'It is not possible to access.');
+    await browser.wait(ExpectedConditions.presenceOf(this.finalMessgaEle), 10000, 'It is not possible to access 100000.');
     return this.finalMessgaEle.getText();
   }
 }
