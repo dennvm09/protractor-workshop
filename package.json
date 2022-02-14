@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "clean": "rm -rf dist && rm -rf reports",
+    "clean": "rm -rf dist reports",
     "build": "npm run lint && npm run clean && tsc",
     "test:local": "npm run build && protractor dist/protractor/local.config.js",
     "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
