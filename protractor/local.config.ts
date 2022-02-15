@@ -9,6 +9,13 @@ export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
+  capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=1000,800'],
+      prefs: { credentials_enable_service: false }
+    }
+  },
   onPrepare: () => {
     reporter();
     browser.waitForAngularEnabled(false);
