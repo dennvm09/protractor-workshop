@@ -1,21 +1,20 @@
 import {
-  browser, by, ElementFinder, ExpectedConditions
+  by, element, ElementArrayFinder
 } from 'protractor';
 
 export class InventoryPage {
-  private buyBtnEle : ElementFinder;
-
-  private cartBtnEle: ElementFinder;
+  private products: ElementArrayFinder;
 
   constructor() {
-    this.buyBtnEle = browser.element(by.id('add-to-cart-sauce-labs-bolt-t-shirt'));
-    this.cartBtnEle = browser.element(by.id('shopping_cart_container'));
+    this.products = element.all(by.className('inventory_item'));
   }
 
-  public async goToShoppingCart(): Promise<void> {
-    await browser.wait(ExpectedConditions.elementToBeClickable(this.buyBtnEle), 10000, 'It is not possible to access.');
-    await this.buyBtnEle.click();
-    await browser.wait(ExpectedConditions.elementToBeClickable(this.cartBtnEle), 10000, 'It is not possible to access.');
-    await this.cartBtnEle.click();
+  private findByProduct(name: string) {
+    return this.products.filter((produ) => produ.element(by.className('inventory_item_name')).getText().then((currentName) => currentName === name)).first();
+  }
+
+  public async chooseProduct(productName: string) {
+    const finalProduct = this.findByProduct(productName);
+    await finalProduct.click();
   }
 }
