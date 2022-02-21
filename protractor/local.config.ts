@@ -11,8 +11,9 @@ export const config: Config = {
   SELENIUM_PROMISE_MANAGER: false,
   capabilities: {
     browserName: 'chrome',
+    unexpectedAlertBehaviour: 'accept',
     chromeOptions: {
-      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=1000,800'],
+      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=1380,1018'],
       prefs: { credentials_enable_service: false }
     }
   },
