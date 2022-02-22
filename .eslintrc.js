@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.ts', '**/*.**.ts'] }],
+    'no-restricted-syntax': ['error', 'WithStatement', "BinaryExpression[operator='in']"],
     'import/extensions': [
       'error',
       'ignorePackages',
