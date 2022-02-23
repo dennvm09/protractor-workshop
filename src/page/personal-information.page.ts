@@ -1,3 +1,4 @@
+/* eslint-disable protractor/no-browser-sleep */
 import {
   browser, by, ElementFinder, ExpectedConditions
 } from 'protractor';
@@ -65,52 +66,45 @@ export class PersonalInformationPage {
 
   private async selectSex(sex: string) {
     this.sexEle = browser.element(by.css(`input[name="sex"][value="${sex}"]`));
-    await browser.actions().mouseMove(this.sexEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.sexEle), 500, 'No access sex'));
-    await this.sexEle.click();
+    browser.executeScript('arguments[0].click();', this.sexEle);
   }
 
   private async selectExperience(experience: string) {
     this.experienceEle = browser.element(by.css(`input[name="exp"][value="${experience}"]`));
-    await browser.actions().mouseMove(this.experienceEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.experienceEle), 500, 'No access experience'));
-    await this.experienceEle.click();
+    browser.executeScript('arguments[0].click();', this.experienceEle);
   }
 
   private async selectProfession(profession: string) {
     this.professionEle = browser.element(by.css(`input[name="profession"][value="${profession}"]`));
-    await browser.actions().mouseMove(this.professionEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.professionEle), 500, 'No access profession'));
-    await this.professionEle.click();
+    browser.executeScript('arguments[0].click();', this.professionEle);
   }
 
   private async selectTool(tool: string) {
     this.toolsEle = browser.element(by.css(`input[name="tool"][value="${tool}"]`));
-    await browser.actions().mouseMove(this.toolsEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.toolsEle), 500, 'No access tool'));
-    await this.toolsEle.click();
+    browser.executeScript('arguments[0].click();', this.toolsEle);
   }
 
   private async selectContinent(continent: string) {
     this.continentEle = browser.element(by.css('select[name="continents"]')).element(by.cssContainingText('option', continent));
-    await browser.actions().mouseMove(this.continentEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.continentEle), 500, 'No access continent'));
-    await this.continentEle.click();
+    browser.executeScript('arguments[0].click();', this.continentEle);
   }
 
   private async selectCommand(command: string) {
     this.commandsEle = browser.element(by.css('select[name="selenium_commands"]')).element(by.cssContainingText('option', command));
-    await browser.actions().mouseMove(this.commandsEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.commandsEle), 500, 'No access command'));
-    await this.commandsEle.click();
+    browser.executeScript('arguments[0].click();', this.commandsEle);
   }
 
   public async submitUserInfo(userInfo): Promise<void> {
     await this.acceptPageCookie();
     await this.fillForm(userInfo);
-    await browser.actions().mouseMove(this.sendBtnEle).perform();
-    await (browser.wait(ExpectedConditions.elementToBeClickable(this.sendBtnEle), 500, 'No access'));
+    await (browser.sleep(1000));
     await this.sendBtnEle.click();
-    await (await browser.switchTo().alert()).accept();
+    await browser.wait((browser.switchTo().alert()).accept(), 3000, '');
   }
 }
