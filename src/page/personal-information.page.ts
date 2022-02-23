@@ -26,7 +26,7 @@ export class PersonalInformationPage {
   private acceptCookieBtn : ElementFinder;
 
   constructor() {
-    this.pageTitleEle = browser.element(by.className('mui-col-md-6')).all(by.tagName('h1')).first();
+    this.pageTitleEle = browser.element(by.className('tutorial-content')).all(by.tagName('h1')).first();
     this.firstNameEle = browser.element(by.name('firstname'));
     this.lastNameEle = browser.element(by.name('lastname'));
     this.sendBtnEle = browser.element(by.name('submit'));
@@ -65,7 +65,6 @@ export class PersonalInformationPage {
 
   private async selectSex(sex: string) {
     this.sexEle = browser.element(by.css(`input[name="sex"][value="${sex}"]`));
-    // await browser.executeScript('arguments[0].click()', this.sexEle);
     await browser.actions().mouseMove(this.sexEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.sexEle), 500, 'No access sex'));
     await this.sexEle.click();
@@ -75,6 +74,7 @@ export class PersonalInformationPage {
     this.experienceEle = browser.element(by.css(`input[name="exp"][value="${experience}"]`));
     await browser.actions().mouseMove(this.experienceEle).perform();
     await (browser.wait(ExpectedConditions.elementToBeClickable(this.experienceEle), 500, 'No access experience'));
+    await this.experienceEle.click();
   }
 
   private async selectProfession(profession: string) {
