@@ -13,7 +13,7 @@ export const config: Config = {
     browserName: 'chrome',
     unexpectedAlertBehaviour: 'accept',
     chromeOptions: {
-      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=1380,1018'],
+      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=800,600'],
       prefs: { credentials_enable_service: false }
     }
   },
