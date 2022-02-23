@@ -103,7 +103,7 @@ export class PersonalInformationPage {
   public async submitUserInfo(userInfo): Promise<void> {
     await this.acceptPageCookie();
     await this.fillForm(userInfo);
-    await (browser.sleep(1000));
+    await (browser.sleep(5000));
     await this.sendBtnEle.click();
     await browser.wait((browser.switchTo().alert()).accept(), 3000, '');
   }
